@@ -1,0 +1,8 @@
+{
+  "name": "Vibe Codin'",
+  "description": "A social coding platform that blends video conferencing with an AI-powered assistant to make remote collaboration more engaging and productive.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
