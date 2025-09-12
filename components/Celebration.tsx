@@ -18,14 +18,16 @@ const ConfettiPiece: React.FC<{ index: number }> = ({ index }) => {
     '--final-rotation': `${finalRotation}deg`,
     width: `${size}px`,
     height: `${size}px`,
+    animation: `fall var(--duration) linear var(--delay) forwards`,
+    left: `var(--initial-x)`,
   } as React.CSSProperties;
 
   return (
     <div
-      className={`absolute top-0 opacity-0 animate-fall ${colors[index % colors.length]}`}
+      className={`absolute top-0 opacity-0 ${colors[index % colors.length]}`}
       style={style}
     >
-      <style>{`
+        <style>{`
         @keyframes fall {
           0% {
             transform: translateY(-10vh) translateX(var(--initial-x)) rotate(var(--initial-rotation));
@@ -35,10 +37,6 @@ const ConfettiPiece: React.FC<{ index: number }> = ({ index }) => {
             transform: translateY(110vh) translateX(var(--initial-x)) rotate(var(--final-rotation));
             opacity: 0;
           }
-        }
-        .animate-fall {
-          animation: fall var(--duration) linear var(--delay) forwards;
-          left: var(--initial-x);
         }
       `}</style>
     </div>
